@@ -1,0 +1,318 @@
+body {
+  background-color: #515151;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0;
+}
+
+#sect1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  font-size: larger;
+}
+#sect1 #navbar1 {
+  width: 82%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+#sect1 #navbar2 {
+  width: 18%;
+  padding: 0;
+  margin: 0;
+}
+#sect1 #navbar2 .a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+#sect1 #navbar2 .a a {
+  color: #54a12d;
+}
+#sect1 #navbar2 .a svg {
+  fill: #54a12d;
+}
+#sect1 #navbar2 .c {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+#sect1 #navbar2 .c .b1 {
+  text-decoration: none;
+}
+#sect1 #navbar2 .c svg {
+  fill: #54a12d;
+  margin-right: 15px;
+}
+#sect1 .nav {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+#sect1 .nav .nav-item {
+  left: 0 !important;
+}
+#sect1 .nav .nav-item .nav-link {
+  color: #54a12d;
+}
+#sect1 .nav .nav-item .nav-link:after {
+  color: #54a12d;
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #54a12d;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+#sect1 .nav .nav-item .nav-link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  color: #54a12d;
+}
+
+.stickyNav {
+  height: 70px;
+  z-index: 3;
+  background-color: #202020;
+  position: fixed !important;
+  top: 0 !important;
+  transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+
+.stickyNav2 {
+  height: 70px;
+  z-index: 3;
+  background-color: #202020;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0;
+  transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+
+#seccion {
+  padding: 4px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+#seccion #quienesSomos {
+  background: white;
+  border-radius: 10px;
+  color: #54a12d;
+  padding: 1%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+#seccion #quienesSomos #iniciosomos {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+#seccion #quienesSomos #iniciosomos #imagensomos {
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  width: 30%;
+  padding: 1%;
+}
+#seccion #quienesSomos #iniciosomos #imagensomos img {
+  height: 250px;
+}
+#seccion #quienesSomos #iniciosomos #titulosomos {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 1%;
+}
+#seccion #quienesSomos #iniciosomos #titulosomos h1 {
+  text-align: center;
+}
+#seccion #quienesSomos #frasessomos {
+  padding: 1%;
+}
+#seccion #informacionTabla {
+  padding: 1%;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  margin-top: 1%;
+  margin-bottom: 1%;
+}
+#seccion #informacionTabla .carta-1 {
+  width: 30%;
+  margin: 1%;
+  padding: 4%;
+  background-color: #8aa12d;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  justify-content: stretch;
+  flex-direction: column;
+}
+#seccion #informacionTabla .carta-1 h2 {
+  text-align: center;
+  font-weight: bold;
+}
+#seccion #informacionTabla .carta-1 li {
+  margin-left: 10%;
+  font-weight: bold;
+}
+#seccion #informacionTabla .carta-1 p {
+  margin-left: 10%;
+  font-weight: bold;
+}
+#seccion #informacionTabla .carta-2 {
+  width: 30%;
+  margin: 1%;
+  padding: 4%;
+  background-color: #2da13d;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  justify-content: stretch;
+  flex-direction: column;
+}
+#seccion #informacionTabla .carta-2 h2 {
+  text-align: center;
+  font-weight: bold;
+}
+#seccion #informacionTabla .carta-2 li {
+  margin-left: 10%;
+  font-weight: bold;
+}
+#seccion #informacionTabla .carta-2 p {
+  margin-left: 10%;
+  font-weight: bold;
+}
+#seccion #informacionTabla .carta-3 {
+  width: 30%;
+  margin: 1%;
+  padding: 4%;
+  background-color: #2da176;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  justify-content: stretch;
+  flex-direction: column;
+}
+#seccion #informacionTabla .carta-3 h2 {
+  text-align: center;
+  font-weight: bold;
+}
+#seccion #informacionTabla .carta-3 li {
+  margin-left: 10%;
+  font-weight: bold;
+}
+#seccion #informacionTabla .carta-3 p {
+  margin-left: 10%;
+  font-weight: bold;
+}
+
+@media (max-width: 1100px) {
+  #seccion #quienesSomos #iniciosomos {
+    flex-direction: column;
+  }
+  #seccion #quienesSomos #iniciosomos #imagensomos {
+    width: 100%;
+  }
+  #seccion #informacionTabla {
+    flex-direction: column;
+  }
+  #seccion #informacionTabla .carta-1 {
+    width: 100%;
+  }
+  #seccion #informacionTabla .carta-2 {
+    width: 100%;
+  }
+  #seccion #informacionTabla .carta-3 {
+    width: 100%;
+  }
+}
+hr {
+  height: 5px !important;
+  background-color: #202020;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+}
+footer .footerContenedo {
+  color: black !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+}
+footer .footerContenedo .links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}
+footer .footerContenedo .links li a img {
+  width: 50px;
+  height: 50px;
+}
+footer .footerContenedo .footerNombre {
+  color: #54a12d !important;
+  font-size: 2rem;
+  font-weight: 500;
+  display: inline-block;
+  text-decoration: none;
+}
+footer .footerContenedo .footerNombre:hover {
+  color: #202020;
+}
+footer .footerContenedo .copyright {
+  color: #54a12d;
+}
+footer .footerContenedo .footerAviso {
+  color: black !important;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+footer .footerContenedo .footerAviso h3 {
+  color: #54a12d;
+  text-decoration: none;
+}
+footer .footerContenedo .footerAviso img {
+  width: 100px;
+  height: 100px;
+}/*# sourceMappingURL=sobrenosotros.css.map */

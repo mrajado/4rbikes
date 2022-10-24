@@ -1,0 +1,120 @@
+//colores
+$blanco: white;
+$negro: black;
+$gris: grey;
+$fondoBody: #515151;
+$colorFondoNav: #202020;
+$verdePrincipal: #54a12d;
+
+$grisSoporte: #9b9b9b;
+$azulPlateado: rgb(222, 222, 234);
+$limaclaro: rgb(182, 231, 182);
+$limaneon: rgb(99, 153, 99);
+
+$coloresNosotros: (
+    #8aa12d,
+    #2da13d,
+    #2da176
+);
+
+
+
+$fuente:'Courier New', Courier, monospace;
+
+
+
+
+//centrar y auto
+$centrar: center;
+$auto: auto;
+$vaciar: none;
+
+//porcentaje
+$cerop: 0%;
+$ceropx: 0;
+$unop: 1%;
+$cincop: 5%;
+$diezp: 10%;
+$oncep: 11%;
+$quincep: 15%;
+$veintep: 20%;
+$veinticincop: 25%;
+$treintap: 30%;
+$cuarentap: 40%;
+$cincuentap: 50%;
+$sesenta: 60%;
+$setenta: 70%;
+$ochenta: 80%;
+$ochentacinco: 85%;
+$nuevenuevep: 99%;
+$cienp: 100%;
+$cienyp:101%;
+$cinco2zeropx: 500px;
+$seix96: 696px;
+
+//imgenes
+$imagenLogoPequenoWidth: 100px;
+$imagenLogoPequenoHeigth: 100px;
+
+$imagen1ContainerWidth: 80%;
+$imagen1ContainerHeigth: 70%;
+
+$imagen2ContainerWidth: 100%;
+$imagen2ContainerHeigth: 100%;
+
+$imagenNosotrosHeigth: 600px;
+
+//flex
+@mixin funcion_flex {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin animacion_contra{
+    transition:  all .70s ease-in-out;
+    -moz-transition: all .70s ease-in-out;
+    -webkit-transition: all .70s ease-in-out;
+}
+
+//Sections Inicio
+@mixin secciones_inicio {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: 5px solid $colorFondoNav;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 20px;
+    margin-bottom: 35px;
+}
+
+//Texto verde sin decoracion
+@mixin textoVerde {
+    color: $verdePrincipal;
+    text-decoration: none;
+    background-color: $negro;
+    position: relative;
+    width: $cienyp;
+    text-align: center;
+    padding: 28px;
+}
+
+//Transformar Imagen
+@mixin ImagenGrande {
+    padding: 133px;
+    transition: 0.5s;
+    opacity: 0.7;
+}
+
+
+//Array Imagens Inicio
+$imagenes: (
+    "../../img/indeximg/bici-reciclada.jpg",
+    "../../img/indeximg/bici-antes-y-despues.jpg",
+    "../../img/indeximg/motor-electrico.jpg"
+);
+
+$texto: "Reciclar",
+    "Adaptar",
+    "Motor-electrico";

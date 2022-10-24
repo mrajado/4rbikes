@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../img/logoheader.png">
+    <title>4R BIKES - LOGIN</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../CSS/cuenta/cuenta.css">
+</head>
+
+<body>
+
+    <!--NAVBAR-->
+    <header id="sect1">
+        
+        <ul class="nav nav-pills navbar" id="navbar1">
+            
+                <li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link principal" id="text1" href="index.html" role="button">Inicio</a>
+                    </li>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link principal" data-bs-toggle="dropdown" id="text2" href="categorias.html"
+                            role="button">Categorias</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item text-dark" href="categorias.html">Reciclar</a>
+                            </li>
+                            <li><a class="dropdown-item text-dark" href="categorias.html">Adaptar</a>
+                            </li>
+                            <li><a class="dropdown-item text-dark" href="categorias.html">Kit electrico</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link principal" href="sobrenosotros.html" role="button"
+                            id="text3">Sobre nosotros</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link principal" id="text4" href="soporte.html" role="button">Soporte Tecnico</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link principal" id="text5" href="noticias.html" role="button">Noticias</a>
+                    </li>
+
+        </ul>
+        <ul class="nav nav-pills navbar" id="navbar2">
+            <li class="a b">
+                <a class="nav-link principal" id="text6" href="#" role="button">Mi cuenta</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                    <path fill-rule="evenodd"
+                        d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                </svg>
+            </li>
+            <li class="a c">
+                <a class="b1" href="" role="button">Eu/En</a>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    class="bi bi-translate" viewBox="0 0 16 16">
+                    <path
+                        d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286H4.545zm1.634-.736L5.5 3.956h-.049l-.679 2.022H6.18z" />
+                    <path
+                        d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2V2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H2zm7.138 9.995c.193.301.402.583.63.846-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6.066 6.066 0 0 1-.415-.492 1.988 1.988 0 0 1-.94.31z" />
+                </svg>
+            </li>
+        </ul>
+    </header>
+
+    
+
+
+    <!--Contenido variable-->
+    <section id="registro" class="container">
+        <div>
+            <form id="forma">
+
+                <fieldset>
+                    <legend>HASI SAIOA</legend>
+
+                    <label for="tomarCorreo">Kontu Electronikoa: </label>
+                    <input id="tomarCorreo" name="tomarCorreo" type="text" onkeypress="return dosArroba(event)" required>
+                    <br>
+
+                    <label for="tomarPasahitza">Pasahitza: </label>
+                    <input id="tomarPasahitza" name="tomarPasahitza" type="password" required>
+                    <br><br>
+
+                    <p id="fallo">Datu bat txarto dago</p>
+                    <button id="btnLogin" type="button">Joan</button>
+                    <br>
+                    <button id="btnModa" type="button" data-bs-toggle="modal" data-bs-target="#registroModal">Resgistratu</button>
+
+                </fieldset>
+
+            </form>  
+        </div>
+
+    </section>
+
+    <div class="modal fade" id="registroModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+                <div class="modal-header">
+                    <h1>¡Hasi Orain!</h1>
+                </div>
+                <section id="registro2" class="container">
+                    <div class="formulario1">
+          
+                        <label for="tomarCorreo">Kontu Electronikoa: </label>
+                        <br>
+                        <input class="tomarCorreo" name="tomarCorreo" type="text" onkeypress="return dosArroba(event)" required>
+                        <br>
+            
+                        <label for="tomarPasahitza">Pasahitza: </label>
+                        <br>
+                        <input class="tomarPasahitza" name="tomarPasahitza" type="password" required>
+                        <br>
+
+                        <label for="repetirPasahitza">Errepikatu Pasahitza: </label>
+                        <br>
+                        <input class="repetirPasahitza" name="repetirPasahitza" type="password" required>
+                        <br><br><br>
+            
+                        <button id="btnSumar" type="button">Registratu</button>
+                        <br>
+
+                    </div>
+            
+                </section>
+            
+
+
+          </div>
+        </div>
+      </div>
+
+    <!--Javascript-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <script src="../JS/cuenta.js"></script>
+
+</body>
+
+</html>

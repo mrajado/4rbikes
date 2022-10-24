@@ -1,0 +1,230 @@
+body {
+  background-color: #515151;
+  font-family: "Courier New", Courier, monospace;
+}
+
+#sect1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  font-size: larger;
+}
+#sect1 #navbar1 {
+  width: 82%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+#sect1 #navbar2 {
+  width: 18%;
+  padding: 0;
+  margin: 0;
+}
+#sect1 #navbar2 .a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+#sect1 #navbar2 .a a {
+  color: #54a12d;
+}
+#sect1 #navbar2 .a svg {
+  fill: #54a12d;
+}
+#sect1 #navbar2 .c {
+  text-decoration: none;
+  padding: 0;
+  margin: 0;
+}
+#sect1 #navbar2 .c .b1 {
+  text-decoration: none;
+}
+#sect1 #navbar2 .c svg {
+  fill: #54a12d;
+  margin-right: 15px;
+}
+#sect1 .nav {
+  display: flex;
+  flex-direction: row;
+  color: black;
+  margin: 0;
+  padding: 0;
+}
+#sect1 .nav .nav-item {
+  left: 0 !important;
+}
+#sect1 .nav .nav-item .nav-link {
+  color: #54a12d;
+}
+#sect1 .nav .nav-item .nav-link:after {
+  color: #54a12d;
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #54a12d;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+#sect1 .nav .nav-item .nav-link:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+  color: #54a12d;
+}
+
+.stickyNav {
+  height: 70px;
+  z-index: 3;
+  background-color: #202020;
+  position: fixed !important;
+  top: 0 !important;
+  transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+
+.stickyNav2 {
+  height: 70px;
+  z-index: 3;
+  background-color: #202020;
+  position: fixed !important;
+  top: 0 !important;
+  right: 0;
+  transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+}
+
+h1 {
+  margin: 2em;
+  text-align: center;
+}
+
+.container {
+  padding: 1em;
+  border: 1px solid black;
+  width: 90%;
+  height: 65em;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+}
+
+.noticia {
+  padding: 0.7em;
+  background-color: #202020;
+  border-radius: 1em;
+  display: flex;
+  width: 100%;
+  height: 20em;
+}
+
+.noticia .imagen img {
+  height: 100%;
+  width: 100%;
+  border-radius: 1em;
+}
+
+.noticia .texto {
+  color: white;
+  padding: 1em;
+  width: 70%;
+  height: 100%;
+}
+
+.noticia .texto .titulo {
+  width: 100%;
+  height: 3em;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.noticia .texto .parrafo {
+  height: 12em;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+hr {
+  height: 5px !important;
+  background-color: white;
+}
+
+.footerContenedo {
+  margin-top: 15em;
+  color: black !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+}
+
+.footerNombre {
+  color: black !important;
+  font-size: 2rem;
+  font-weight: 500;
+  display: inline-block;
+  color: white;
+  text-decoration: none;
+  color: white;
+}
+
+.footerNombre:hover {
+  color: white;
+}
+
+.footerAviso {
+  color: black !important;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+ul li a img {
+  width: 50px;
+  height: 50px;
+}
+
+.footerAviso h3 {
+  color: black;
+  text-decoration: none;
+}
+
+.footerAviso img {
+  width: 100px;
+  height: 100px;
+}
+
+.copyright {
+  color: black;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+}/*# sourceMappingURL=noticias.css.map */

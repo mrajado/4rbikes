@@ -1,0 +1,288 @@
+@import "../variables.scss";
+
+body{
+    background-color: $fondoBody;
+}
+
+//////////////////////NAVBAR/////////////////
+#sect1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    font-size: larger;
+
+
+    #navbar1 {
+        width: 82%;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    #navbar2 {
+        width: 18%;
+        padding: 0;
+        margin: 0;
+
+        .a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0;
+            margin: 0;
+
+            a {
+                color: $verdePrincipal;
+            }
+
+            svg {
+                fill: $verdePrincipal;
+            }
+        }
+
+        .c {
+            text-decoration: none;
+            padding: 0;
+            margin: 0;
+
+            .b1 {
+                text-decoration: none;
+            }
+
+            svg {
+                fill: $verdePrincipal;
+                margin-right: 15px;
+
+            }
+        }
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        color: $negro;
+        margin: 0;
+        padding: 0;
+
+        .nav-item {
+            left: 0 !important;
+
+            .nav-link {
+                color: $verdePrincipal;
+            }
+
+            .nav-link:after {
+                color: $verdePrincipal;
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: $verdePrincipal;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            .nav-link:hover:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+                color: $verdePrincipal;
+            }
+
+        }
+
+
+
+    }
+}
+
+.stickyNav {
+    height: 70px;
+    z-index: 3;
+    background-color: $colorFondoNav;
+    position: fixed !important;
+    top: 0 !important;
+    transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+}
+
+.stickyNav2 {
+    height: 70px;
+    z-index: 3;
+    background-color: $colorFondoNav;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0;
+    transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+}
+
+
+
+//////////////////////FIN NAVBAR/////////////////
+
+.container{
+    background-color: $colorFondoNav;
+    border-radius: 1em;
+    box-shadow: 3px 3px 3px black;
+    width: 50%;
+    padding: 2em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif, 'arial';
+    font-weight: 600;
+    font-size: 3em;
+    color: $verdePrincipal;
+    text-align: center;
+}
+
+h4 {
+    font-family: 'Roboto', sans-serif, 'arial';
+    font-weight: 400;
+    font-size: 20px;
+    color: $verdePrincipal;
+    line-height: 1.5;
+}
+
+/* ///// inputs /////*/
+
+input:focus ~ label, textarea:focus ~ label, input:valid ~ label, textarea:valid ~ label {
+    font-size: 0.75em;
+    color: $verdePrincipal;
+    top: -5px;
+    -webkit-transition: all 0.225s ease;
+    transition: all 0.225s ease;
+}
+
+.styled-input {
+    float: left;
+    width: 293px;
+    margin: 1rem 0;
+    position: relative;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 768px){
+    .styled-input {
+        width:100%;
+    }
+}
+
+.styled-input label {
+    color: #999;
+    padding: 1.3rem 30px 1rem 30px;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease;
+    pointer-events: none;
+}
+
+.styled-input.wide { 
+    width: 650px;
+    max-width: 100%;
+}
+
+input,
+textarea {
+    padding: 30px;
+    border: 0;
+    width: 100%;
+    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: white;
+    border-radius: 4px;
+}
+
+input:focus,
+textarea:focus { outline: 0; }
+
+input:focus ~ span,
+textarea:focus ~ span {
+    width: 100%;
+    -webkit-transition: all 0.075s ease;
+    transition: all 0.075s ease;
+}
+
+textarea {
+    width: 100%;
+    min-height: 15em;
+}
+
+.input-container {
+    width: 650px;
+    max-width: 100%;
+    margin: 20px auto 25px auto;
+}
+
+.submit-btn {
+    padding: 10px 35px;
+    border-radius: 1em;
+    display: inline-block;
+    background-color: $fondoBody;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.06),
+              0 2px 10px 0 rgba(0,0,0,0.07);
+    -webkit-transition: all 300ms ease;
+    transition: all 300ms ease;
+}
+
+.submit-btn:hover {
+    transform: translateY(1px);
+    box-shadow: 0 1px 1px 0 rgba(0,0,0,0.10),
+              0 1px 1px 0 rgba(0,0,0,0.09);
+}
+
+@media (max-width: 768px) {
+    .submit-btn {
+        width:100%;
+        float: none;
+        text-align:center;
+    }
+}
+
+input[type=checkbox] + label {
+  color: #ccc;
+  font-style: italic;
+} 
+
+input[type=checkbox]:checked + label {
+  color: #f00;
+  font-style: normal;
+}
+
+@media (max-width: 1360px) {
+    .col-md-6{
+        display: flex;
+        flex-wrap: nowrap;
+    }
+
+    h1{
+        font-size: 2em;
+    }
+
+}

@@ -1,0 +1,222 @@
+@import "../variables.scss";
+
+body {
+    // background-color: #515151;
+    background-color: $fondoBody;
+    font-family: $fuente;
+    margin: 0;
+}
+
+
+//////////////////////NAVBAR/////////////////
+#sect1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    font-size: larger;
+
+
+    #navbar1 {
+        width: 82%;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    #navbar2 {
+        width: 18%;
+        padding: 0;
+        margin: 0;
+
+        .a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0;
+            margin: 0;
+
+            a {
+                color: $verdePrincipal;
+            }
+
+            svg {
+                fill: $verdePrincipal;
+            }
+        }
+
+        .c {
+            text-decoration: none;
+            padding: 0;
+            margin: 0;
+
+            .b1 {
+                text-decoration: none;
+            }
+
+            svg {
+                fill: $verdePrincipal;
+                margin-right: 15px;
+
+            }
+        }
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        color: $negro;
+        margin: 0;
+        padding: 0;
+
+        .nav-item {
+            left: 0 !important;
+
+            .nav-link {
+                color: $verdePrincipal;
+            }
+
+            .nav-link:after {
+                color: $verdePrincipal;
+                content: '';
+                position: absolute;
+                width: 100%;
+                transform: scaleX(0);
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: $verdePrincipal;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            .nav-link:hover:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+                color: $verdePrincipal;
+            }
+
+        }
+
+
+
+    }
+}
+
+.stickyNav {
+    height: 70px;
+    z-index: 3;
+    background-color: $colorFondoNav;
+    position: fixed !important;
+    top: 0 !important;
+    transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+}
+
+.stickyNav2 {
+    height: 70px;
+    z-index: 3;
+    background-color: $colorFondoNav;
+    position: fixed !important;
+    top: 0 !important;
+    right: 0;
+    transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+}
+//////FIN NABVAR////////
+
+
+
+
+
+
+
+/////////////////////FOOTER//////////////////////
+
+
+hr {
+    height: 5px !important;
+    background-color: $colorFondoNav;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+
+    .footerContenedo {
+        color: $negro !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: space-between;
+
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+
+            li a img {
+                width: 50px;
+                height: 50px;
+            }
+
+        }
+
+        .footerNombre {
+            color: $verdePrincipal !important;
+            font-size: 2rem;
+            font-weight: 500;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .footerNombre:hover {
+            color: $colorFondoNav;
+        }
+
+        .copyright {
+            color: $verdePrincipal
+        }
+
+        .footerAviso {
+            color: $negro !important;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+
+            h3 {
+                color: $verdePrincipal;
+                text-decoration: none;
+            }
+
+            img {
+                width: $imagenLogoPequenoWidth;
+                height: $imagenLogoPequenoHeigth;
+            }
+
+        }
+
+    }
+
+}
+
+
+
+/////////////////////FIN FOOTER///////////////////
