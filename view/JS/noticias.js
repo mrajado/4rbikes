@@ -45,7 +45,6 @@ function loadNoticia(){
 		
    		var MisNoticias = result.list;
    		
-   		console.log(MisNoticias);
    		VerNoticias(MisNoticias);
 
    		
@@ -55,7 +54,6 @@ function loadNoticia(){
 }; //end loadNoticias
 
 function VerNoticias(ListaNoticias){
-	console.log("listaNoticias: "+ListaNoticias);
 	CodigoHTML="";
 	
 	ListaNoticias.forEach(elemNoticia => {

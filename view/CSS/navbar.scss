@@ -1,0 +1,237 @@
+@import "variables.scss";
+
+body {
+    // background-color: #515151;
+    background-color: $fondoBody;
+    font-family: $fuente;
+    margin: 0;
+}
+
+
+//////////////////////NAVBAR/////////////////
+ 
+#menu-navbar{
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+#sect1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: $cienp;
+    height: $setentapx;
+    font-size: larger;
+    font-weight: bold;
+
+
+    #navbar1 {
+        width: $ochenta;
+        display: flex;
+        flex-direction: row;
+        justify-content: left;
+        align-items: center;
+    }
+
+    #navbar2 {
+        display: flex;
+        flex-direction: row;
+        width: $veintep;
+        padding: $ceropx;
+        margin: $ceropx;
+
+        .a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding: $cerop;
+            margin: $ceropx;
+
+            a {
+                color: $verdePrincipal;
+            }
+
+            svg {
+                fill: $verdePrincipal;
+            }
+        }
+
+        .c {
+            text-decoration: none;
+            padding: $ceropx;
+            margin: $ceropx;
+
+            .b1 {
+                text-decoration: none;
+            }
+
+            svg {
+                fill: $verdePrincipal;
+                margin-right: $quiencepx;
+
+            }
+        }
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        color: $negro;
+        margin: $ceropx;
+        padding: $cerop;
+
+        .nav-item {
+            left: $cerop !important;
+
+            .nav-link {
+                color: $verdePrincipal;
+            }
+
+            .nav-link:after {
+                color: $verdePrincipal;
+                content: '';
+                position: absolute;
+                width: $cienp;
+                transform: scaleX(0);
+                height: $dospx;
+                bottom: $cerop;
+                left: $cerop;
+                background-color: $verdePrincipal;
+                transform-origin: bottom right;
+                transition: transform 0.25s ease-out;
+            }
+
+            .nav-link:hover:after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+                color: $verdePrincipal;
+            }
+
+        }
+
+
+
+    }
+}
+
+.stickyNav {
+    height: $setentapx;
+    z-index: 3;
+    background-color: $colorFondoNav;
+    position: fixed !important;
+    top: $ceropx !important;
+    transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+}
+
+.stickyNav2 {
+    height: $setentapx;
+    z-index: 3;
+    background-color: $colorFondoNav;
+    position: fixed !important;
+    top: $ceropx!important;
+    right: $ceropx;
+    transition-timing-function: ease-in-out;
+    -moz-transition-timing-function: ease-in-out;
+    -webkit-transition-timing-function: ease-in-out;
+    -o-transition-timing-function: ease-in-out;
+    transition-duration: .5s;
+    -moz-transition-duration: .5s;
+    -webkit-transition-duration: .5s;
+    -o-transition-duration: .5s;
+}
+
+.checkbtn{
+    display: none;
+}
+#menu_navbar{
+    display: none;
+}
+//////FIN NABVAR////////
+
+@media (max-width: 1200px) {
+
+    .bi .bi-list{
+        display: block;
+        color: $verdePrincipal;
+        width: 5em;
+        height: 4em;
+    }
+
+    ul {
+      z-index: 1000;
+      float: none;
+      margin-right: 30px; 
+      width: $cienp;
+    }
+
+    ul{
+        position: fixed;
+        width: $cienp;
+        //height: 100vh;
+        top: $ochentapx;
+        left: -100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul  ul{
+        top: $ceropx;
+        opacity: 1;
+        visibility: visible;
+        position: relative;
+    }
+
+    nav ul li ul{
+        top: $ceropx;
+        text-align: center;
+        display: flex;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    nav ul li:hover > ul{
+        top: $cerop;
+        display: block; 
+    }
+
+    ul .children{
+        width: $cienp;
+        display: block; 
+    }
+
+    nav ul ul li{
+        width: $cienp;
+        background: #2c3e50;
+    }
+
+    nav ul ul a{
+        width: $cienp;
+        background: #2c2c2c;
+    }
+
+    #check:checked ~ ul, ul ul{
+      left: $cerop;
+    }
+    
+    #navbar1{
+        background-color: red;
+        display: none;
+        width: $ceropx;
+    }
+
+    #navbar2{
+        width: $cienp;
+    }
+}

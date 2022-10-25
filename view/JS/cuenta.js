@@ -95,7 +95,6 @@ function inicioSesion(event){
 
             if (correo == persona[0].correo && pasahitza == persona[0].contrasena){
               console.log("Bienvenido "+persona[0].correo);
-              fallo.style="display: none;";
 
               //colocar nombre
               cuenta = document.getElementById("text6");
@@ -103,6 +102,7 @@ function inicioSesion(event){
 
               if (persona[0].admin == 1){
                 alert("Usted es admin");
+                window.location.href="../html/tablas.html";
 
               } else{
                 alert("Usted no es admin");

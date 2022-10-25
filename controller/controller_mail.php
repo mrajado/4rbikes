@@ -15,7 +15,7 @@ $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 $headers .= "From: Iker Musatadi <i_musatadi@fpzornotza.com>\r\n"; 
 
 //ruta del mensaje desde origen a destino 
-$headers .= "Return-path: u_garcia@fpzornotza.com\r\n"; 
+$headers .= "Return-path: ikermusatadi123@gmail.com\r\n"; 
 
 mail($correo,$asunto,$mensaje,$headers);
 

@@ -34,3 +34,19 @@ function stick2() {
   
 }
 
+
+
+function enseñar(esto){
+  ver=document.getElementsByClassName("ver")
+  for (let i = 0; i < ver.length; i++) {
+    ver[i].style.display='none';
+  }
+	vista=document.getElementById(esto).style.display;
+	if (vista=='none'){
+		vista='block';
+}
+	else
+		vista='none';
+
+	document.getElementById(esto).style.display = vista;
+}

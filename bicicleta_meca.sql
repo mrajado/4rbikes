@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-10-2022 a las 14:35:42
+-- Tiempo de generación: 24-10-2022 a las 14:13:21
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -25,6 +25,10 @@ DELIMITER $$
 --
 -- Procedimientos
 --
+CREATE DEFINER=`root`@`localhost` PROCEDURE `spFindIdMarca` (IN `idMarca` INT)  NO SQL BEGIN
+select * from marca where marca.idMarca=idMarca;
+END$$
+
 CREATE DEFINER=`root`@`localhost` PROCEDURE `spInsert` (IN `correo` VARCHAR(35), IN `contrasena` VARCHAR(25))  NO SQL BEGIN
 INSERT INTO usuarios(correo,contrasena)
 VALUES (correo,contrasena);
@@ -39,11 +43,21 @@ DELIMITER ;
 --
 
 CREATE TABLE `componentes` (
-  `id_componente` int(11) NOT NULL,
+  `idComponente` int(11) NOT NULL,
   `tipo` varchar(50) NOT NULL,
   `stock` int(11) NOT NULL,
-  `marca` int(11) NOT NULL
+  `idMarca` int(11) NOT NULL,
+  `nombre` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `componentes`
+--
+
+INSERT INTO `componentes` (`idComponente`, `tipo`, `stock`, `idMarca`, `nombre`) VALUES
+(1, 'ruedaMontana', 3, 1, 'shimano'),
+(2, 'ruedaCarretera', 5, 2, 'hed'),
+(3, 'ruedaTodoterreno', 6, 3, 'zipp');
 
 -- --------------------------------------------------------
 
@@ -52,9 +66,18 @@ CREATE TABLE `componentes` (
 --
 
 CREATE TABLE `marca` (
-  `id_marca` int(11) NOT NULL,
+  `idMarca` int(11) NOT NULL,
   `nombre` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `marca`
+--
+
+INSERT INTO `marca` (`idMarca`, `nombre`) VALUES
+(1, 'BH'),
+(2, 'ORBEA'),
+(3, 'SCOTT');
 
 -- --------------------------------------------------------
 
@@ -75,9 +98,9 @@ CREATE TABLE `noticias` (
 --
 
 INSERT INTO `noticias` (`id_noticia`, `imagenNoticia`, `titulo`, `fecha`, `texto`) VALUES
-(1, '../img/noticiasimg/1.jpeg', 'juan.jpg', '2022-10-19', 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'),
-(2, '../img/noticiasimg/2.jpeg', 'Se ha matado Paco', '2022-10-19', 'BBBBBBBBBBBBBBBBBB'),
-(3, '../img/noticiasimg/3.jpeg', 'A', '2022-10-19', 'ADCSDKFHKJFJKDFKOJGFKJFGHFJRKGKGJFJDKFGUJF');
+(1, '../img/noticiasimg/1.jpeg', 'Las nuevas bicicletas eléctricas de Lancia ya se puede comprar a partir de 1.050 euros', '2022-10-19', 'Lancia se lanza a conquistar la ciudad dejando de lado las cuatro ruedas y presentando cuatro modelos diferentes de bicicletas eléctricas, en colaboración con la marca Platum, para \"ofrecer una solución completa de movilidad urbana elegante y sostenible\". La marca italiana, ya conocida en los entornos urbanos gracias a su superventas Lancia Ypsilon, un pequeño coche que ya acumula más de 3 millones de unidades vendidas en cuatro generaciones distintas, ha elaborado cuatro diseños que responden a las diferentes necesidades de aquellos que recorren la ciudad día a día. '),
+(2, '../img/noticiasimg/2.jpeg', 'Cómo solicitar las ayudas de hasta 700 euros de la Xunta para comprar una bicicleta eléctrica', '2022-10-19', 'La Xunta de Galicia ha abierto el plazo para que la población de esta región pueda solicitar las ayudas de hasta 700 euros para la compra de bicicletas eléctricas. Ya son 92 los establecimientos adheridos para la venta de estas bicicletas y todas las personas interesadas pueden presentar desde este lunes y hasta el 15 de noviembre la solicitud de acceso a la ayuda.'),
+(3, '../img/noticiasimg/3.jpeg', 'Porsche sube su apuesta por las bicicletas eléctricas y crea una división especializada', '2022-10-19', 'La marca de Stuttgart se ha tomado muy en serio el desarrollo de un ecosistema eléctrico con vehículos de todo tipo, y con el objeto de incrementar su presencia en el cada vez más creciente segmento de las bicicletas eléctricas se ha aliado con Ponooc Investment, una potente compañía holandesa especializada en este campo.');
 
 -- --------------------------------------------------------
 
@@ -103,7 +126,8 @@ INSERT INTO `usuarios` (`id`, `correo`, `contrasena`, `admin`) VALUES
 (4, 'diosesjuan@meca.net', 'vmljasdkm', 0),
 (5, 'Marcelo@gmail.com', 'salamanca567', 0),
 (6, 'admin', 'admin123', 1),
-(7, 'iker@gmail.com', '123', NULL);
+(7, 'iker@gmail.com', '123', NULL),
+(8, '4RBikess@gmail.com', 'admin123', 1);
 
 --
 -- Índices para tablas volcadas
@@ -113,14 +137,15 @@ INSERT INTO `usuarios` (`id`, `correo`, `contrasena`, `admin`) VALUES
 -- Indices de la tabla `componentes`
 --
 ALTER TABLE `componentes`
-  ADD PRIMARY KEY (`id_componente`),
-  ADD KEY `marca` (`marca`);
+  ADD PRIMARY KEY (`idComponente`),
+  ADD KEY `marca` (`idMarca`),
+  ADD KEY `nombre` (`nombre`);
 
 --
 -- Indices de la tabla `marca`
 --
 ALTER TABLE `marca`
-  ADD PRIMARY KEY (`id_marca`);
+  ADD PRIMARY KEY (`idMarca`);
 
 --
 -- Indices de la tabla `noticias`
@@ -142,13 +167,13 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `componentes`
 --
 ALTER TABLE `componentes`
-  MODIFY `id_componente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idComponente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `marca`
 --
 ALTER TABLE `marca`
-  MODIFY `id_marca` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idMarca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `noticias`
@@ -160,7 +185,7 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
@@ -170,7 +195,7 @@ ALTER TABLE `usuarios`
 -- Filtros para la tabla `componentes`
 --
 ALTER TABLE `componentes`
-  ADD CONSTRAINT `componentes_ibfk_1` FOREIGN KEY (`marca`) REFERENCES `marca` (`id_marca`);
+  ADD CONSTRAINT `componentes_ibfk_1` FOREIGN KEY (`idMarca`) REFERENCES `marca` (`idMarca`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

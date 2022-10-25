@@ -1,0 +1,54 @@
+@import "../variables.scss";
+
+body{
+	padding: $unop;
+}
+
+.botonInicio{
+	color: $negro;
+    text-decoration: none;
+}
+
+#container1{
+
+	h2{
+		text-align: $centrar;
+	}
+
+	table,th,td{
+		border:1px solid $negro;
+		border-collapse:collapse;
+		margin: $auto;	
+	}
+}
+
+#contenedor2{
+	display: $vaciar;
+
+	#container2{
+	
+		margin-top: $diezp;
+		display: flex;
+		flex-direction: column;
+		width: $treintap;
+	
+		h3{
+			text-align: $centrar;
+		}
+	}
+}
+
+
+
+#insertar{
+	margin-top: $diezp;
+	display: flex;
+	flex-direction: column;
+	width: $treintap;
+
+	h3{
+		text-align: $centrar;
+	}
+}
+
+

@@ -1,140 +1,6 @@
 @import "../variables.scss";
+@import "../navbar.scss";
 
-body {
-    // background-color: #515151;
-    background-color: $fondoBody;
-    font-family: $fuente;
-    margin: 0;
-}
-
-
-//////////////////////NAVBAR/////////////////
-
-#barra{
-    display: none;
-}
-
-#sect1 {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 70px;
-    font-size: larger;
-
-
-    #navbar1 {
-        width: $ochentacinco;
-        display: flex;
-        flex-direction: row;
-        justify-content: left;
-        align-items: center;
-    }
-
-    #navbar2 {
-        width: $veinticincop;
-        padding: 0;
-        margin: 0;
-
-        .a {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: right;
-
-            a {
-                color: $verdePrincipal;
-            }
-
-            svg {
-                fill: $verdePrincipal;
-            }
-
-            .b1 {
-                text-decoration: none;
-                margin-right: 15px;
-            }
-        }
-    }
-
-    .nav {
-        display: flex;
-        flex-direction: row;
-        color: $negro;
-        margin: 0;
-        padding: 0;
-
-        .nav-item {
-            left: 0 !important;
-
-            .nav-link {
-                color: $verdePrincipal;
-            }
-
-            .nav-link:after {
-                color: $verdePrincipal;
-                content: '';
-                position: absolute;
-                width: 100%;
-                transform: scaleX(0);
-                height: 2px;
-                bottom: 0;
-                left: 0;
-                background-color: $verdePrincipal;
-                transform-origin: bottom right;
-                transition: transform 0.25s ease-out;
-            }
-
-            .nav-link:hover:after {
-                transform: scaleX(1);
-                transform-origin: bottom left;
-                color: $verdePrincipal;
-            }
-
-        }
-
-
-
-    }
-}
-
-.stickyNav {
-    height: 70px;
-    z-index: 3;
-    width: $ochentacinco;
-    background-color: $colorFondoNav;
-    position: fixed !important;
-    top: 0 !important;
-    transition-timing-function: ease-in-out;
-    -moz-transition-timing-function: ease-in-out;
-    -webkit-transition-timing-function: ease-in-out;
-    -o-transition-timing-function: ease-in-out;
-    transition-duration: .5s;
-    -moz-transition-duration: .5s;
-    -webkit-transition-duration: .5s;
-    -o-transition-duration: .5s;
-}
-
-.stickyNav2 {
-    height: 70px;
-    z-index: 3;
-    width: $veinticincop;
-    background-color: $colorFondoNav;
-    position: fixed !important;
-    top: 0 !important;
-    right: 0;
-    transition-timing-function: ease-in-out;
-    -moz-transition-timing-function: ease-in-out;
-    -webkit-transition-timing-function: ease-in-out;
-    -o-transition-timing-function: ease-in-out;
-    transition-duration: .5s;
-    -moz-transition-duration: .5s;
-    -webkit-transition-duration: .5s;
-    -o-transition-duration: .5s;
-}
-
-
-
-//////////////////////FIN NAVBAR/////////////////
 
 // marquee img{
 //     width: 49px;
@@ -334,7 +200,7 @@ body {
         @each $a in $texto {
             $i: index($texto , $a );
 
-            &:nth-child(#{$i}) a:after {
+            .img#{$i} a:after {
                 content: "#{$a}";
             }
         }
@@ -429,21 +295,5 @@ footer {
 
 
 /////////////////////FIN FOOTER///////////////////
-
-
-
-
-
-@media (max-width: 1400px) {
-    #navbar1{
-        background-color: red;
-        display: none;
-        width: $cincuentap;
-    }
-
-    #navbar2{
-        width: $cuarentap;
-    }
-}
 
 
