@@ -5,6 +5,12 @@ document.getElementById("btnInsertar").addEventListener("click", execInsertar);
 
 
 
+
+
+
+
+
+
 /*Funcion cargar*/
 function loadComponentes() {
 
@@ -56,8 +62,19 @@ function loadComponentes() {
 
 }
 
-/*Cargar marcas */
 
+
+
+
+
+
+
+
+
+
+
+
+/*Cargar marcas */
 function loadMarca() {
     var url2 = "../../controller/controller_cargaraMarcas.php";
 
@@ -77,6 +94,18 @@ function loadMarca() {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*Funcion sumar*/
@@ -111,6 +140,18 @@ function execInsertar() {
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+/* Funcion eliminar */
 function execEliminar(event) {
 
     var idComponente = event.currentTarget.value;
@@ -135,6 +176,15 @@ function execEliminar(event) {
 }
 
 
+
+
+
+
+
+
+
+
+/*funciones de actualizar*/
 function mostrarUpdate(event){
 
     var leer = event.target.value;
@@ -148,6 +198,7 @@ function mostrarUpdate(event){
 	document.getElementById("contenedor2").style.display = "block";
 		
 	var url = "../../controller/controller_mostrarAldatu.php";
+
 	var data = {'leer':leer};
 
     fetch(url, {
@@ -155,19 +206,20 @@ function mostrarUpdate(event){
         body: JSON.stringify(data), // data can be `string` or {object}!
         headers:{'Content-Type': 'application/json'}  //input data
         })
-        
+
       .then(res => res.json())
       .then(result => {
+
+                var componente = result.list;       		
+                console.log(componente);
   
-                 var componente = result.list;       		
-                 console.log(componente);
-  
-                 idComponente.value=componente[0].idComponente;
-                 nombre.value=componente[0].nombre;
-                 tipo.value=componente[0].tipo;
-                 stock.value=componente[0].stock;
-                 //nombreMarca.value=book[0].numPag;
-                 
+                idComponente.value=componente[0].idComponente;
+                nombre.value=componente[0].nombre;
+                tipo.value=componente[0].tipo;
+                stock.value=componente[0].stock;
+                
+                nombreMarca.innerHTML= "<option value='" + componente[0].objMarca.idMarca + "'>" + componente[0].objMarca.nombre + "</option>";
+                
       })
       .catch(error => console.error('Error status:', error));	
 }

@@ -107,6 +107,39 @@ class componentes_model extends componentes_class {
         $this->CloseConnect();
  }
 
+    public function update1() {
+        $this->OpenConnect();  
+
+        $idComponente=$this->idComponente;
+        $sql = "SELECT * FROM componentes WHERE componentes.idComponente=$idComponente";  
+
+        $result = $this->link->query($sql); 
+
+        $list=array();
+
+        while ($row = mysqli_fetch_array($result, MYSQLI_ASSOC)) {
+    
+            $newComp=new componentes_model(); // self() 
+            $newComp->idComponente=$row['idComponente'];
+            $newComp->nombre=$row['nombre'];
+            $newComp->tipo=$row['tipo'];
+            $newComp->stock=$row['stock'];
+            $newComp->idMarca=$row['idMarca'];
+  
+            $newMarca=new marca_model(); 
+            $newMarca->idMarca=$row['idMarca'];
+            $newMarca->nombre=$row['nombre'];
+
+            $newMarca->findIdMarca();
+            $newComp->objMarca=$newMarca;
+
+            array_push($list, $newComp);  
+        }
+        mysqli_free_result($result);
+        $this->CloseConnect();
+        return($list);
+}
+
 
 
 
