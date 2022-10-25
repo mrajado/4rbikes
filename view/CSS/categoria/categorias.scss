@@ -81,12 +81,13 @@
 
     .carousel-control-prev{
         justify-content: left !important;
+        width: $tresp;
     }
 
     .carousel-control-next{
         justify-content: right !important;
+        width: $tresp;
     }
-
 }
 
 
