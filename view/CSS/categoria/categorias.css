@@ -256,10 +256,10 @@ body {
   height: 22em;
 }
 .container .carousel-control-prev {
-  justify-content: right !important;
+  justify-content: left !important;
 }
 .container .carousel-control-next {
-  justify-content: left !important;
+  justify-content: right !important;
 }
 
 hr {
